@@ -164,36 +164,3 @@ footer a {
 footer a:hover {
     color: #bbbbbb;
 }
-
-
-@media (max-width: 650px) {
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .container,
-    main {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    nav ul {
-        gap: 18px;
-        flex-wrap: wrap;
-    }
-
-    section img {
-        height: auto;
-    }
-
-    table {
-        font-size: 12px;
-    }
-
-    th,
-    td {
-        padding: 7px 4px;
-    }
-}
