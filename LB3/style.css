@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f4f5;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #222222;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+header {
+    margin: 0;
+    padding: 25px 0;
+    background-color: white;
+    border-bottom: 3px solid #1e6f8f;
+}
+
+header h1 {
+    margin: 0 0 25px;
+    padding: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1e6f8f;
+    text-align: center;
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222222;
+}
+
+nav a:hover,
+nav a.active {
+    color: #1e6f8f;
+}
+
+main {
+    flex: 1;
+    margin: 25px auto;
+    padding: 35px 40px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+h1,
+h2 {
+    color: #222222;
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: 700;
+    border-left: 5px solid #1e6f8f;
+    padding-left: 12px;
+}
+
+section img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+ul {
+    margin: 0;
+    padding-left: 25px;
+    line-height: 1.8;
+}
+
+table {
+    width: 100%;
+    padding: 0;
+    border: 1px solid #888888;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 12px 8px;
+    border: 1px solid #888888;
+}
+
+th {
+    font-weight: 700;
+    background-color: #1e6f8f;
+    color: white;
+}
+
+form {
+    max-width: 700px;
+}
+
+form label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #222222;
+}
+
+fieldset {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #999999;
+}
+
+fieldset label {
+    font-weight: 400;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #1e6f8f;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #222222;
+}
+
+footer {
+    margin: 0;
+    padding: 25px 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+footer a:hover {
+    color: #1e6f8f;
+}
+
+/* Страница входа */
+.login-page {
+    background-image: url("https://avatars.mds.yandex.net/i?id=4fe74c83ff251d072c13d5061e089a248be6d0e8-10139706-images-thumbs&n=13");
+    background-size: cover;
+    background-position: center;
+}
+
+.login-main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.login-form {
+    width: 350px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.login-form h1 {
+    margin: 0 0 25px;
+    color: #1e6f8f;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+}
+
+.login-form a {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #222222;
+}
+
+.login-form a:hover {
+    color: #1e6f8f;
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    main {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    main {
+        padding: 25px 20px;
+    }
+
+    section img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    th,
+    td {
+        padding: 6px 3px;
+    }
+}

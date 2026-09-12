@@ -1,0 +1,56 @@
+* {
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+body {
+    background-color: white;
+    color: black;
+}
+
+nav,
+button,
+input[type="file"] {
+    display: none;
+}
+
+main {
+    margin: 0;
+    padding-top: 10px;
+}
+
+section img {
+    width: 70%;
+    height: auto;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    border-top: 1px solid black;
+}
+
+footer a {
+    color: black;
+}
+
+.dishes {
+    display: block;
+}
+
+.dish {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    filter: none;
+}
+
+.login-page {
+    background-image: none;
+}
+
+.login-form {
+    width: 100%;
+    padding: 10px;
+}
