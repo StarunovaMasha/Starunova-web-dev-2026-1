@@ -55,6 +55,68 @@
     margin-top: 15px;
 }
 
+.registration {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #dddddd;
+}
+
+.registration form {
+    max-width: 700px;
+}
+
+.registration label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.registration input[type="text"],
+.registration input[type="email"],
+.registration select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    color: #222222;
+}
+
+.registration fieldset {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #999999;
+}
+
+.registration fieldset label {
+    font-weight: 400;
+}
+
+.registration .check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.registration button {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #1e6f8f;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.registration button:hover {
+    background-color: #222222;
+}
+
 @media (max-width: 800px) {
     .dishes {
         grid-template-columns: repeat(2, 1fr);
