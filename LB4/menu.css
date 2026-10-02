@@ -15,7 +15,8 @@
     cursor: pointer;
 }
 
-.dish:hover {border: 2px solid #1e6f8f;}
+.dish:hover,
+.dish.selected {border: 2px solid #1e6f8f;}
 
 .dish:hover button {background-color: #222222;}
 
@@ -41,17 +42,11 @@
 }
 
 .weight {
-    margin-top: auto !important;
+    margin-top: auto;
     color: #777777;
 }
 
 .dish button {margin-top: 15px;}
-
-.dish.selected {
-    border: 2px solid #1e6f8f;
-}
-
-
 
 .order-section {
     margin-top: 50px;
@@ -78,8 +73,6 @@
     margin-bottom: 8px;
     font-size: 18px;
 }
-
-.selected-category p {margin: 5px 0;}
 
 .selected-name {
     font-size: 18px;
@@ -108,9 +101,7 @@
 
 @media (max-width: 800px) {
     .dishes {grid-template-columns: repeat(2, 1fr);}
-
     .dish {padding: 25px;}
-
     .order-layout {
         grid-template-columns: 1fr;
         gap: 30px;
