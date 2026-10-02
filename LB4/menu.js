@@ -1,3 +1,5 @@
+"use strict";
+
 const dishes = [
     {
         keyword: "k1_classic",
@@ -81,8 +83,7 @@ const picked = {
 
 const kayakBox = document.querySelector("#kayak-dishes");
 const canoeBox = document.querySelector("#canoe-dishes");
-const teamBox  = document.querySelector("#team-dishes");
-
+const teamBox = document.querySelector("#team-dishes");
 
 
 function makeCard(dish) {
@@ -124,7 +125,6 @@ function makeCard(dish) {
 }
 
 
-
 function drawCards() {
     kayakBox.innerHTML = "";
     canoeBox.innerHTML = "";
@@ -139,10 +139,9 @@ function drawCards() {
 
         if (dish.category === "kayak") kayakBox.appendChild(card);
         if (dish.category === "canoe") canoeBox.appendChild(card);
-        if (dish.category === "team")  teamBox.appendChild(card);
+        if (dish.category === "team") teamBox.appendChild(card);
     });
 }
-
 
 
 function pickDish(keyword) {
@@ -154,7 +153,8 @@ function pickDish(keyword) {
 
     picked[dish.category] = dish;
 
-    document.querySelectorAll(".dish").forEach(function (card) {
+    const cards = document.querySelectorAll(".dish");
+    cards.forEach(function (card) {
         card.classList.remove("selected");
     });
 
@@ -165,16 +165,15 @@ function pickDish(keyword) {
 }
 
 
-
 function syncOrder() {
     const emptyOrder = document.querySelector("#empty-order");
     const kayakBlock = document.querySelector("#selected-kayak");
     const canoeBlock = document.querySelector("#selected-canoe");
-    const teamBlock  = document.querySelector("#selected-team");
+    const teamBlock = document.querySelector("#selected-team");
 
     const kayakItem = document.querySelector("#selected-kayak-item");
     const canoeItem = document.querySelector("#selected-canoe-item");
-    const teamItem  = document.querySelector("#selected-team-item");
+    const teamItem = document.querySelector("#selected-team-item");
 
     emptyOrder.style.display = "none";
 
@@ -224,13 +223,12 @@ function syncOrder() {
 }
 
 
-
 function calcTotal() {
     let total = 0;
 
     if (picked.kayak) total += picked.kayak.price;
     if (picked.canoe) total += picked.canoe.price;
-    if (picked.team)  total += picked.team.price;
+    if (picked.team) total += picked.team.price;
 
     const totalBlock = document.querySelector("#order-total");
     const totalPrice = document.querySelector("#total-price");
@@ -245,17 +243,16 @@ function calcTotal() {
 }
 
 
-
 const form = document.querySelector("#order-form");
 
 form.addEventListener("submit", function () {
     const kayakKey = document.querySelector("#kayak-keyword");
     const canoeKey = document.querySelector("#canoe-keyword");
-    const teamKey  = document.querySelector("#team-keyword");
+    const teamKey = document.querySelector("#team-keyword");
 
     kayakKey.value = picked.kayak ? picked.kayak.keyword : "";
     canoeKey.value = picked.canoe ? picked.canoe.keyword : "";
-    teamKey.value  = picked.team  ? picked.team.keyword  : "";
+    teamKey.value = picked.team ? picked.team.keyword : "";
 });
 
 
