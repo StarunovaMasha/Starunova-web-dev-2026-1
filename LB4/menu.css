@@ -98,6 +98,24 @@
 .user-data textarea {resize: vertical;}
 
 
+.reset-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid #1e6f8f;
+    border-radius: 5px;
+    background-color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e6f8f;
+    cursor: pointer;
+}
+
+.reset-btn:hover {
+    background-color: #1e6f8f;
+    color: white;
+}
+
 
 @media (max-width: 800px) {
     .dishes {grid-template-columns: repeat(2, 1fr);}

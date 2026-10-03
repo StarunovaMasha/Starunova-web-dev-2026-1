@@ -1,4 +1,5 @@
 "use strict";
+
 function syncOrder() {
     const emptyOrder = document.querySelector("#empty-order");
     const kayakBlock = document.querySelector("#selected-kayak");
@@ -87,6 +88,21 @@ form.addEventListener("submit", function () {
     kayakKey.value = picked.kayak ? picked.kayak.keyword : "";
     canoeKey.value = picked.canoe ? picked.canoe.keyword : "";
     teamKey.value = picked.team ? picked.team.keyword : "";
+});
+
+
+const resetBtn = document.querySelector("#reset-btn");
+
+resetBtn.addEventListener("click", function () {
+    picked.kayak = null;
+    picked.canoe = null;
+    picked.team = null;
+
+    document.querySelectorAll(".dish").forEach(function (card) {
+        card.classList.remove("selected");
+    });
+
+    syncOrder();
 });
 
 syncOrder();
