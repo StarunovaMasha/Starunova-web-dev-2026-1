@@ -2,6 +2,7 @@
 
 function syncOrder() {
     const emptyOrder = document.querySelector("#empty-order");
+    
     const kayakBlock = document.querySelector("#selected-kayak");
     const canoeBlock = document.querySelector("#selected-canoe");
     const teamBlock = document.querySelector("#selected-team");
@@ -47,7 +48,7 @@ function syncOrder() {
 
     const hasAny = picked.kayak || picked.canoe || picked.team;
 
-    if (!hasAny) {
+    if (!hasAny) {   
         emptyOrder.style.display = "block";
         kayakBlock.style.display = "none";
         canoeBlock.style.display = "none";
@@ -79,7 +80,6 @@ function calcTotal() {
 
 
 const form = document.querySelector("#order-form");
-
 form.addEventListener("submit", function () {
     const kayakKey = document.querySelector("#kayak-keyword");
     const canoeKey = document.querySelector("#canoe-keyword");
@@ -92,7 +92,6 @@ form.addEventListener("submit", function () {
 
 
 const resetBtn = document.querySelector("#reset-btn");
-
 resetBtn.addEventListener("click", function () {
     picked.kayak = null;
     picked.canoe = null;
