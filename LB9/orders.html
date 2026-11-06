@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>История заявок</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="print.css" media="print">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+
+        <h1>Гребная лига Москвы</h1>
+
+        <nav>
+            <a href="index.html">О соревнованиях</a>
+            <a href="lunch.html">Собрать заявку</a>
+            <a href="checkout.html">Оформить заявку</a>
+            <a class="active" href="orders.html">Заявки</a>
+            <a href="login.html">Вход</a>
+            <a href="feedback.html">Обратная связь</a>
+            <a href="index.html#contacts">Контакты</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="container">
+
+    <h1>История заявок</h1>
+
+    <p id="orders-message">Загрузка заявок…</p>
+
+    <div class="table-wrap">
+        <table class="orders-table" id="orders-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Дата оформления</th>
+                    <th>Состав заявки</th>
+                    <th>Стоимость</th>
+                    <th>Возрастная категория</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody id="orders-body"></tbody>
+        </table>
+    </div>
+
+</main>
+
+
+<footer id="contacts">
+    <div class="container">
+        <p>Гребная лига Москвы</p>
+        <p>
+            Телефон:
+            <a href="tel:+70000000000">+7-000-000-00-00</a>
+        </p>
+        <p>
+            Email:
+            <a href="mailto:rowing@example.com">rowing@example.com</a>
+        </p>
+    </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="lab6.js"></script>
+<script src="orders.js"></script>
+
+</body>
+</html>
