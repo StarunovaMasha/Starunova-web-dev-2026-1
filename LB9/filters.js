@@ -41,16 +41,16 @@ function showAllCards() {
 
 setupFilters();
 
-// Запускаем загрузку после того, как выполнились все скрипты страницы
+
 document.addEventListener("DOMContentLoaded", function () {
     loadDishes()
         .then(function () {
-            restoreSelection();   // выбор из localStorage
-            showAllCards();       // карточки (выбранные подсветятся)
-            syncOrder();          // панель со стоимостью
+            restoreSelection();   
+            showAllCards();      
+            syncOrder();          
         })
         .catch(function (error) {
             console.error("Не удалось загрузить данные:", error);
-            showLoadError();
+            showLoadError(error);
         });
 });

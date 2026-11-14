@@ -32,6 +32,11 @@ function formatDate(iso) {
     }).replace(",", "");
 }
 
+
+function getName(order) {
+    return order.full_name || order.fio || "";
+}
+
 function formatAge(age) {
     return age ? String(age).replace("-", "–") + " лет" : "—";
 }
@@ -83,7 +88,13 @@ function sortOrders(list) {
 }
 
 async function loadOrders() {
-    const response = await fetch(ORDERS_URL);
+    
+    const response = await fetch(withKey(ORDERS_URL));
+
+    
+    if (response.status === 404) {
+        return [];
+    }
 
     if (!response.ok) {
         throw new Error("Ошибка сервера: " + response.status);
@@ -249,7 +260,7 @@ function showDetails(order) {
     body.appendChild(infoRow("Дата оформления", formatDate(order.created_at)));
 
     body.appendChild(el("h4", "modal-section", "Участник"));
-    body.appendChild(infoRow("ФИО", order.fio || "—"));
+    body.appendChild(infoRow("ФИО", getName(order) || "—"));
     body.appendChild(infoRow("Телефон", order.phone || "—"));
     body.appendChild(infoRow("Email", order.email || "—"));
     body.appendChild(infoRow("Возрастная категория", formatAge(order.age)));
@@ -285,7 +296,7 @@ function showEdit(order) {
     const fio = document.createElement("input");
     fio.type = "text";
     fio.required = true;
-    fio.value = order.fio || "";
+    fio.value = getName(order);
     form.appendChild(fieldRow("ФИО", "edit-fio", fio));
 
     const phone = document.createElement("input");
@@ -333,7 +344,7 @@ function showEdit(order) {
         }
 
         const updated = Object.assign({}, order, {
-            fio: fio.value.trim(),
+            full_name: fio.value.trim(),
             phone: phone.value.trim(),
             email: email.value.trim(),
             age: age.value,
@@ -343,7 +354,7 @@ function showEdit(order) {
         buttons.forEach(function (button) { button.disabled = true; });
 
         try {
-            const response = await fetch(ORDERS_URL + "/" + order.id, {
+            const response = await fetch(withKey(ORDERS_URL + "/" + order.id), {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updated)
@@ -366,7 +377,7 @@ function showEdit(order) {
         } catch (error) {
             console.error("Не удалось изменить заявку:", error);
             buttons.forEach(function (button) { button.disabled = false; });
-            showNotification("Не удалось сохранить изменения. Проверьте подключение и попробуйте ещё раз.");
+            showNotification(errorText(error, "Не удалось сохранить изменения. Проверьте подключение и попробуйте ещё раз."));
         }
     }
 }
@@ -384,7 +395,7 @@ function showDelete(order) {
         buttons.forEach(function (button) { button.disabled = true; });
 
         try {
-            const response = await fetch(ORDERS_URL + "/" + order.id, { method: "DELETE" });
+            const response = await fetch(withKey(ORDERS_URL + "/" + order.id), { method: "DELETE" });
 
             if (!response.ok) {
                 throw new Error("Ошибка сервера: " + response.status);
@@ -398,7 +409,7 @@ function showDelete(order) {
         } catch (error) {
             console.error("Не удалось удалить заявку:", error);
             buttons.forEach(function (button) { button.disabled = false; });
-            showNotification("Не удалось удалить заявку. Проверьте подключение и попробуйте ещё раз.");
+            showNotification(errorText(error, "Не удалось удалить заявку. Проверьте подключение и попробуйте ещё раз."));
         }
     }
 }
@@ -411,5 +422,5 @@ Promise.all([loadDishes(), loadOrders()])
     .catch(function (error) {
         console.error("Не удалось загрузить заявки:", error);
         document.querySelector("#orders-message").textContent =
-            "Не удалось загрузить заявки. Попробуйте обновить страницу.";
+            errorText(error, "Не удалось загрузить заявки. Попробуйте обновить страницу.");
     });
