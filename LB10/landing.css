@@ -1,0 +1,117 @@
+
+:root {
+    --bs-primary: #1e6f8f;
+    --bs-primary-rgb: 30, 111, 143;
+    --bs-link-color: #1e6f8f;
+    --bs-link-hover-color: #175a75;
+    --bs-body-font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {scroll-behavior: smooth;}
+
+section[id] {scroll-margin-top: 80px;}
+
+body {background-color: #f2f4f5;}
+
+.btn-primary {
+    --bs-btn-bg: #1e6f8f;
+    --bs-btn-border-color: #1e6f8f;
+    --bs-btn-hover-bg: #175a75;
+    --bs-btn-hover-border-color: #175a75;
+    --bs-btn-active-bg: #134b61;
+    --bs-btn-active-border-color: #134b61;
+    --bs-btn-disabled-bg: #1e6f8f;
+    --bs-btn-disabled-border-color: #1e6f8f;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #1e6f8f;
+    box-shadow: 0 0 0 0.25rem rgba(30, 111, 143, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: #1e6f8f;
+    border-color: #1e6f8f;
+}
+
+
+.hero {
+    background: linear-gradient(135deg, #0f4a61 0%, #1e6f8f 100%);
+}
+
+.hero-kicker {
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+}
+
+.hero-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+}
+
+
+.stat-number {
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: #1e6f8f;
+}
+
+
+.section-head {max-width: 640px;}
+
+
+.feature-icon,
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: rgba(30, 111, 143, 0.12);
+    color: #1e6f8f;
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 26px;
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+}
+
+.feature-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Призыв к действию */
+.cta {
+    background-color: #1e6f8f;
+    background-image: linear-gradient(135deg, #1e6f8f 0%, #0f4a61 100%);
+}
+
+.cta-text {max-width: 560px;}
+
+@media (max-width: 575.98px) {
+    .hero-img {height: 240px;}
+}
+
+@media (min-width: 576px) {
+    .w-sm-auto {width: auto !important;}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {scroll-behavior: auto;}
+
+    .feature-card {transition: none;}
+}
